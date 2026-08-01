@@ -17,7 +17,7 @@
 <body>
 <div class="page-shell">
     <div class="profile-card">
-        <p class="eyebrow">Profile Summary</p>
+        <p class="eyebrow">Data submitted successfully</p>
         <h1>${profileModel.firstName} ${profileModel.lastName}</h1>
         <p class="profile-subtitle">Your submitted details are displayed below.</p>
 
