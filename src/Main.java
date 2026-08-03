@@ -1,3 +1,8 @@
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import com.shapes.Square;
+import com.vehicles.Car;
+import com.vehicles.Plane;
 
 import com.shapesWithAnnotations.Circle;
 import com.shapesWithAnnotations.Square;
