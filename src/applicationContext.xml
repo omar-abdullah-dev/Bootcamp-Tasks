@@ -7,24 +7,27 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <!--  DI for Literal values using config files and setters and constructor  -->
 
-    <!--  DI for Objects using Constructors and Setters  -->
+    <!-- load properties file configuration -->
+    <context:property-placeholder location="application.properties"/>
 
-    <!-- Dependencies beans-->
-    <bean id="draw2d" class="com.shapes.Draw2D"/>
-    <bean id="draw3d" class="com.shapes.Draw3D"/>
+    <!-- Dependency beans -->
+    <bean id="dbOperations" class="com.vehicles.config.DBOperations"
+          init-method="connectToDatabase"
+          destroy-method="disconnectFromDatabase">
+        <property name="url" value="${database.url}"/>
+        <property name="userName" value="${database.username}"/>
+        <property name="password" value="${database.password}"/>
+    </bean>
+
     <!-- Main Beans -->
-    <!--  Constructor Injection for Circle  -->
-    <bean id="circle" class="com.shapes.Circle" >
-        <!--    by default the scope is singleton so no need to write scope="singleton" here    -->
-        <constructor-arg ref="draw2d"/>
-        <constructor-arg ref="draw3d"/>
+    <bean id="car" class="com.vehicles.Car">
+        <constructor-arg ref="dbOperations"/>
     </bean>
-    <!--  Setter Injection for Square  -->
-    <bean id="square" class="com.shapes.Square" scope="prototype">
-        <property name="draw2D" ref="draw2d"/>
-        <property name="draw3D" ref="draw3d"/>
+    <bean id="plane" class="com.vehicles.Plane">
+        <property name="dbOps" ref="dbOperations"/>
     </bean>
-
+    <context:component-scan base-package="com.shapesWithAnnotations"/>
 
 </beans>
