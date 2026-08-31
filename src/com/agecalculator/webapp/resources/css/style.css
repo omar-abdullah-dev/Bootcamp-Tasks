@@ -1,0 +1,122 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #6dd5ed 100%);
+    overflow: hidden;
+}
+
+/* Glass Form */
+form {
+    width: 400px;
+    padding: 45px;
+    background: rgba(255, 255, 255, .15);
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 24px;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, .2);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+form::before {
+    content: "Age Calculator";
+    font-size: 28px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 15px 18px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, .18);
+    color: white;
+    font-size: 15px;
+    transition: .3s;
+}
+
+input[type="text"]::placeholder {
+    color: rgba(255, 255, 255, .75);
+}
+
+input[type="text"]:focus {
+    background: rgba(255, 255, 255, .28);
+    transform: translateY(-2px);
+}
+
+.result-card {
+    width: 420px;
+    padding: 45px;
+    text-align: center;
+    background: rgba(255, 255, 255, .15);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 25px;
+    color: white;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
+}
+
+.emoji {
+    font-size: 45px;
+}
+
+.result-card h1 {
+    margin: 15px 0;
+}
+
+.result-card p {
+    font-size: 20px;
+    opacity: .8;
+}
+
+.age-number {
+    font-size: 90px;
+    font-weight: bold;
+    margin: 15px 0;
+    color: white;
+}
+
+.result-card span {
+    font-size: 22px;
+    opacity: .9;
+}
+
+.custom-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: white;
+    color: #5b4bdb;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.custom-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, .2);
+}
+
+.custom-btn:active {
+    transform: scale(.98);
+}

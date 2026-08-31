@@ -1,9 +1,5 @@
 package com.shapes;
 
-import com.shapes.Draw2D;
-import com.shapes.Draw3D;
-import com.shapes.Shape;
-
 public class Square implements Shape {
     private Draw2D draw2D;
     private Draw3D draw3D;
