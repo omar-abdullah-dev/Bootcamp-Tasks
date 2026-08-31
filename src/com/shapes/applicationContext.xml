@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Dependencies beans -->
+    <bean id="draw2d" class="com.shapes.Draw2D"/>
+    <bean id="draw3d" class="com.shapes.Draw3D"/>
+
+    <!-- Main Beans -->
+    <!-- Constructor Injection for Circle (Singleton scope by default) -->
+    <bean id="circle" class="com.shapes.Circle" scope="singleton">
+        <constructor-arg ref="draw2d"/>
+        <constructor-arg ref="draw3d"/>
+    </bean>
+
+    <!-- Setter Injection for Square (Prototype scope) -->
+    <bean id="square" class="com.shapes.Square" scope="prototype">
+        <property name="draw2D" ref="draw2d"/>
+        <property name="draw3D" ref="draw3d"/>
+    </bean>
+
+</beans>

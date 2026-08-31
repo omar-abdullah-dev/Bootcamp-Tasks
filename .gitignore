@@ -1,0 +1,20 @@
+# Dependencies & Libraries
+libs/
+*.jar
+
+# Build & Compiler output
+out/
+target/
+*.class
+
+# IDE and Editor files
+.idea/
+*.iml
+*.iws
+*.ipr
+.smarttomcat/
+
+# OS and Temporary files
+.DS_Store
+Thumbs.db
+*.log
