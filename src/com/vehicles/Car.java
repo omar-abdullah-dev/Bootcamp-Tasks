@@ -1,11 +1,11 @@
 package com.vehicles;
 
-
 import com.vehicles.config.DBOperations;
 
 public class Car implements Vehicle {
-    DBOperations dbOps;
-    String model;
+    private DBOperations dbOps;
+    private String model;
+
     public Car(DBOperations dbOps) {
         this.dbOps = dbOps;
     }
@@ -19,6 +19,7 @@ public class Car implements Vehicle {
     public void saveToDB() {
         dbOps.save(this);
     }
+
     public void setModel(String model) {
         this.model = model;
     }

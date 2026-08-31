@@ -17,10 +17,8 @@ public class ProfileController {
     @RequestMapping("/submitProfileForm")
     public String submitProfileForm(
             @ModelAttribute("profileModel") ProfileModel profileModelData,
-                                    Model model) {
+            Model model) {
         model.addAttribute("profileModel", profileModelData);
         return "profileData";
     }
-
-
 }

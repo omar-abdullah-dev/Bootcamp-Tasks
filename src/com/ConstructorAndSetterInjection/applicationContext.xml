@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Dependencies classes -->
+    <bean id="draw2dShape" class="com.ConstructorAndSetterInjection.Draw2dShape"/>
+    <bean id="draw3dShape" class="com.ConstructorAndSetterInjection.Draw3dShape"/>
+
+    <!-- Main beans -->
+    <bean id="circle" class="com.ConstructorAndSetterInjection.CircleShape">
+        <constructor-arg ref="draw2dShape"/>
+        <constructor-arg ref="draw3dShape"/>
+    </bean>
+
+    <bean id="square" class="com.ConstructorAndSetterInjection.SquareShape">
+        <property name="draw2dSquare" ref="draw2dShape"/>
+        <property name="draw3dSquare" ref="draw3dShape"/>
+    </bean>
+
+</beans>
