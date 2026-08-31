@@ -1,0 +1,15 @@
+# Build & Compiler output
+out/
+target/
+*.class
+
+# IDE and Editor files
+.idea/
+*.iml
+*.iws
+*.ipr
+.smarttomcat/
+
+# OS files
+.DS_Store
+Thumbs.db
