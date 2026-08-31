@@ -1,7 +1,7 @@
 # Bootcamp-Tasks
 
 This repository contains all Java & Spring Backend Bootcamp tasks and assignments.
-Each task is organized into its own dedicated package and directory structure to ensure modularity, clear separation of concerns, and conflict-free version control.
+Each task is organized into its own dedicated package and directory structure under `src/com/` to ensure modularity, clear separation of concerns, and conflict-free version control.
 
 ---
 
@@ -9,7 +9,7 @@ Each task is organized into its own dedicated package and directory structure to
 
 | # | Task / Concept | Package / Directory | Description |
 |---|---|---|---|
-| 1 | **IoC Container** | `src/IoCTask` | Inversion of control demonstration with Shape classes (`CircleShape`, `RectangleShape`, `TriangleShape`) and Spring XML configuration. |
+| 1 | **IoC Container** | `src/com/IoCTask` | Inversion of control demonstration with Shape classes (`CircleShape`, `RectangleShape`, `TriangleShape`) and Spring XML configuration. |
 | 2 | **Constructor & Setter DI** | `src/com/ConstructorAndSetterInjection` | Dependency injection using both constructor and setter injection for 2D & 3D shape drawing services. |
 | 3 | **Literal Injection** | `src/com/injectLiteral` | Injection of literal values and database configuration loaded from external `application.properties`. |
 | 4 | **Bean Scopes** | `src/com/shapes` | Demonstrating singleton vs. prototype bean scopes in Spring container lifecycle. |
