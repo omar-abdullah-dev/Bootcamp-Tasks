@@ -23,6 +23,17 @@ public class Person {
    @OneToOne(mappedBy = "person")
     private Passport passport;
 
+
+    public Person() {
+    }
+
+    public Person(String firstName, String lastName, Date dateOfBirth, Passport passport) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dateOfBirth = dateOfBirth;
+        this.passport = passport;
+    }
+
     public Long getId() {
         return id;
     }
@@ -61,5 +72,17 @@ public class Person {
 
     public void setPassport(Passport passport) {
         this.passport = passport;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", passport= {" +
+                "passportNumber=" + (passport != null ? passport.getPassportNumber() : null) + '\'' +
+                '}';
     }
 }

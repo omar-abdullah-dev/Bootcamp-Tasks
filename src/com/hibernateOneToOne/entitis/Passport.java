@@ -20,6 +20,15 @@ public class Passport {
     @Column(name = "expiry_date")
     private Date expiryDate;
 
+    public Passport() {
+    }
+
+    public Passport(Person person, String passportNumber, Date expiryDate) {
+        this.person = person;
+        this.passportNumber = passportNumber;
+        this.expiryDate = expiryDate;
+    }
+
     public Long getId() {
         return id;
     }

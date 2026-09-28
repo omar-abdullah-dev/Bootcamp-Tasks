@@ -4,6 +4,7 @@ import com.hibernateOneToOne.entitis.Passport;
 import com.hibernateOneToOne.entitis.Person;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 import java.text.ParseException;
@@ -16,30 +17,38 @@ public class Main {
                 .addAnnotatedClass(Person.class)
                 .addAnnotatedClass(Passport.class);
 
-        String databasePassword = System.getenv("HIBERNATE_DB_PASSWORD");
-        if (databasePassword != null) {
-            configuration.setProperty("hibernate.connection.password", databasePassword);
-        }
-
         try (SessionFactory sessionFactory = configuration.buildSessionFactory();
              Session session = sessionFactory.openSession()) {
-            Person person = new Person();
-            person.setFirstName("John");
-            person.setLastName("Doe");
-            person.setDateOfBirth(parseDate("1990-01-01"));
-            Passport passport = new Passport();
-            passport.setPassportNumber("AB" + System.currentTimeMillis());
-            passport.setExpiryDate(parseDate("2025-01-01"));
-            passport.setPerson(person);
+    Transaction transaction = null;
 
-            session.beginTransaction();
-            session.persist(person);
-            session.persist(passport);
-            session.getTransaction().commit();
+    try {
+        transaction = session.beginTransaction();
 
-            System.out.println("Saved person with id: " + person.getId());
+        Passport passport = new Passport();
+        passport.setPassportNumber("AB" + System.currentTimeMillis());
+        passport.setExpiryDate(parseDate("2025-01-01"));
+
+        Person person = new Person();
+        person.setFirstName("John");
+        person.setLastName("Doe");
+        person.setDateOfBirth(parseDate("1990-01-01"));
+        person.setPassport(passport);
+
+        session.persist(person);
+
+        transaction.commit();
+        System.out.println("Saved person with id: " + person.getId());
+        System.out.println(person);
+    } catch (Exception exception) {
+        if (transaction != null && transaction.isActive()) {
+            transaction.rollback();
+        }
+        throw exception;
+    }
+
         }
     }
+
 
     private static java.util.Date parseDate(String value) {
         try {
