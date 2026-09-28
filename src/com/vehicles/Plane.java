@@ -1,11 +1,10 @@
 package com.vehicles;
 
-
 import com.vehicles.config.DBOperations;
 
 public class Plane implements Vehicle {
-    DBOperations dbOps;
-    String model;
+    private DBOperations dbOps;
+    private String model;
 
     @Override
     public void saveToDB() {

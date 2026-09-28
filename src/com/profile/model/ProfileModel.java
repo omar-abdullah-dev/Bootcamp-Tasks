@@ -1,8 +1,6 @@
 package com.profile.model;
 
-
 import org.springframework.format.annotation.DateTimeFormat;
-
 import java.util.Date;
 
 public class ProfileModel {
@@ -10,6 +8,7 @@ public class ProfileModel {
     private String lastName;
     private String email;
     private String city;
+
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateOfBirth;
 
