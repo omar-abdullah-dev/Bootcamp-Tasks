@@ -2,7 +2,31 @@
 
 Welcome to the **Java & Spring Backend Bootcamp** repository. This workspace contains all hands-on assignments, architectural exercises, and backend projects completed throughout the bootcamp journey.
 
-Each task is fully encapsulated within its own dedicated package under `src/com/` to guarantee modularity, clear separation of concerns, and conflict-free version control across branches.
+Each task is fully encapsulated within its own dedicated package under `src/com/`. This keeps task pull requests independent: contributors should add or change files only inside the directory for the task they are implementing.
+
+## Conflict-resistant repository layout
+
+```text
+src/com/
+├── IoCTask/                       # Task 01
+├── ConstructorAndSetterInjection/ # Task 02
+├── injectLiteral/                 # Task 03
+├── shapes/                        # Task 03.1
+├── vehicles/                      # Task 03.2
+├── shapesWithAnnotations/         # Task 03.3
+├── agecalculator/                 # Task 04
+├── profile/                       # Task 05
+└── validation/                    # Task 06
+```
+
+The repository contains source and documentation only. IntelliJ metadata, compiled classes, local Tomcat configuration, downloaded libraries, and other machine-specific files are intentionally untracked and ignored. This prevents unrelated pull requests from competing over shared generated files.
+
+### Pull request rules
+
+- Work from the latest `main` before starting a task branch.
+- Keep implementation, configuration, views, styles, and documentation inside that task's directory.
+- Do not commit files from `.idea/`, `.smarttomcat/`, `out/`, `target/`, `libs/`, or generated `.class`/`.jar` files.
+- Update this root README only when the task index or repository-wide workflow changes.
 
 ---
 

@@ -1,18 +1,18 @@
-# Dependencies & Libraries
-libs/
+# Local dependencies and generated binaries
+/libs/
 *.jar
 
-# Build & Compiler output
-out/
-target/
+# Build output
+/out/
+/target/
 *.class
 
-# IDE and Editor files
-.idea/
+# IDE, editor, and local server files
+/.idea/
 *.iml
 *.iws
 *.ipr
-.smarttomcat/
+/.smarttomcat/
 
 # OS and Temporary files
 .DS_Store
